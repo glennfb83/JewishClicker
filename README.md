@@ -1,19 +1,17 @@
 # Jewish Clicker
 
-A polished, respectful, Cookie Clicker-inspired web game about building community one mitzvah at a time.
+A small browser game about doing good deeds and building a community.
 
-## Play locally
+## Run it
 
-Open `index.html` in a browser. No build step or dependencies are required.
+There is no build step. Open `index.html` in a browser, or serve the folder with any simple static web server.
 
-## Features
+## What is included
 
-- Responsive, accessible clicker interface
-- Mitzvah clicking with animated feedback and a community milestone bar
-- Five unlockable upgrades and five community helpers with scaling costs
-- Passive points-per-second production
-- Twelve achievements and local browser save state
-- Rotating wisdom quotes, a timed community moment, sound preference, and a reset option
-- Easter eggs include the golden candle moment, a hidden achievement path, and the achievement-worthy Professional Mensch
+- Click-based mitzvah points with passive production
+- Five upgrades and five community helpers
+- Milestones, achievements, quotes, and a short community event
+- Progress saved in the browser with `localStorage`
+- Responsive layout for desktop and mobile screens
 
-The project is intentionally built with plain HTML, CSS, and JavaScript so it can be deployed directly with GitHub Pages.
+The project uses plain HTML, CSS, and JavaScript, so it can be hosted directly with GitHub Pages.
