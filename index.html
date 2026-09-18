@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b132b" />
+  <meta name="description" content="Jewish Clicker — build a joyful community, one mitzvah at a time." />
+  <title>Jewish Clicker — One Mitzvah at a Time</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Jewish Clicker home">
+        <span class="brand-mark">✡</span>
+        <span><strong>Jewish</strong> Clicker</span>
+      </a>
+      <div class="header-actions">
+        <button class="icon-button" id="soundToggle" type="button" aria-label="Toggle sound">🔔</button>
+        <button class="small-button" id="resetButton" type="button">New game</button>
+      </div>
+    </header>
+
+    <main id="top" class="game-grid">
+      <section class="hero-panel panel">
+        <div class="eyebrow"><span class="live-dot"></span> Your community is growing</div>
+        <h1>Spread a little <em>light.</em></h1>
+        <p class="hero-copy">Click the mitzvah to inspire your community. Every click counts.</p>
+
+        <div class="score-wrap">
+          <div class="score-label">Mitzvah points</div>
+          <div class="score" id="score">0</div>
+          <div class="rate"><span id="perSecond">0</span> per second</div>
+        </div>
+
+        <button class="mitzvah-button" id="mitzvahButton" type="button" aria-label="Perform a mitzvah">
+          <span class="button-glow"></span>
+          <span class="starburst">✦</span>
+          <span class="button-symbol">✡</span>
+          <span class="button-caption">DO A MITZVAH</span>
+          <span class="button-subcaption">+<span id="clickPower">1</span> point</span>
+        </button>
+        <div class="streak" id="streakText">Start your streak today ✨</div>
+
+        <div class="progress-card">
+          <div class="progress-heading"><span>Next community milestone</span><strong id="milestoneLabel">100 points</strong></div>
+          <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+          <div class="progress-foot"><span id="progressText">0 / 100</span><span id="milestoneReward">A surprise awaits</span></div>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+        <section class="panel event-card" id="eventCard">
+          <div class="section-heading"><span><span class="heading-icon">🕯️</span> Community moment</span><span class="pill" id="eventTimer">ready</span></div>
+          <div class="event-content">
+            <div class="event-illustration" id="eventEmoji">🕯️</div>
+            <div><h2 id="eventTitle">Light the candles</h2><p id="eventDescription">A little glow goes a long way. Come back often for community moments.</p></div>
+          </div>
+          <button class="outline-button" id="eventButton" type="button">Light candles <span>→</span></button>
+        </section>
+
+        <section class="panel quote-card">
+          <div class="quote-mark">“</div>
+          <blockquote id="quoteText">The world is sustained by three things: Torah, service, and acts of loving-kindness.</blockquote>
+          <cite>— Pirkei Avot 1:2</cite>
+          <button class="text-button" id="quoteButton" type="button">Another bit of wisdom ↗</button>
+        </section>
+
+        <section class="panel stats-card">
+          <div class="section-heading"><span><span class="heading-icon">📊</span> Your journey</span></div>
+          <div class="stats-grid">
+            <div><strong id="totalClicks">0</strong><span>mitzvot done</span></div>
+            <div><strong id="totalEarned">0</strong><span>points earned</span></div>
+            <div><strong id="buildingsOwned">0</strong><span>helpers</span></div>
+            <div><strong id="achievementCount">0/12</strong><span>badges</span></div>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <section class="lower-grid">
+      <section class="panel upgrades-panel">
+        <div class="section-title-row"><div><div class="eyebrow">Make every click count</div><h2>Upgrades</h2></div><span class="owned-label"><span id="upgradeCount">0</span> unlocked</span></div>
+        <div class="upgrade-list" id="upgradeList"></div>
+      </section>
+      <section class="panel helpers-panel">
+        <div class="section-title-row"><div><div class="eyebrow">Many hands, more light</div><h2>Community helpers</h2></div><span class="owned-label"><span id="helperCount">0</span> active</span></div>
+        <div class="helper-list" id="helperList"></div>
+      </section>
+    </section>
+
+    <section class="panel achievements-panel">
+      <div class="section-title-row"><div><div class="eyebrow">Little moments worth celebrating</div><h2>Achievements</h2></div><span class="owned-label"><span id="achievementProgress">0</span> / 12</span></div>
+      <div class="achievement-list" id="achievementList"></div>
+    </section>
+
+    <footer><span>Made with joy, generosity, and a little JavaScript.</span><span>Jewish Clicker <span class="footer-star">✡</span></span></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="floating-layer" id="floatingLayer" aria-hidden="true"></div>
+  <script src="game.js"></script>
+</body>
+</html>
